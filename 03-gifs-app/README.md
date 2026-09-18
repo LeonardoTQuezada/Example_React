@@ -67,3 +67,9 @@ export default tseslint.config([
   },
 ])
 ```
+
+
+
+
+# Se a instalado Axios
+# npm i axios

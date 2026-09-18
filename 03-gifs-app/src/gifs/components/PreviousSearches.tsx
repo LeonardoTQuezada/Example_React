@@ -1,10 +1,12 @@
 import type { FC } from "react"
 
+
 interface Props{
-    searches: string[]
+    searches: string[];
+    onLabelClicked: (term: string) => void;
 }
 
-export const PreviousSearches: FC<Props> = ({searches}) => {
+export const PreviousSearches: FC<Props> = ({searches, onLabelClicked}) => {
   return (
         <div className="previous-searches">
             <h2>Busquedaas previas</h2>
@@ -12,7 +14,9 @@ export const PreviousSearches: FC<Props> = ({searches}) => {
            
               {
                 searches.map(term => (
-                    <li key={term}>{term}</li>
+                    <li key={term} 
+                    onAbort={()=> onLabelClicked(term)}
+                    >{term}</li>
                 ))
               }
           
